@@ -47,22 +47,24 @@ const columns = [
 
 #### `CustomTable<T>`
 
-| Prop     | Type                                | Description                                                  |
-|----------|-------------------------------------|--------------------------------------------------------------|
-| `data`   | `T[]`                               | The list of rows to display in the table                     |
-| `columns`| `Column<T>[]`                       | Column definitions with headers and accessors                |
+| Prop      | Type               | Description                                             |
+|-----------|--------------------|---------------------------------------------------------|
+| `data`    | `T[]`              | The list of rows to display in the table               |
+| `columns` | `Column<T>[]`     | Array of column definitions used to render the table   |
 
 #### `Column<T>`
 
 ```ts
-type Column<T> = {
-  header: string;
-  accessor: keyof T;
-};
+interface Column<T> {
+  label: string;
+  key: keyof T;
+  sortable?: boolean;
+}
 ```
 
-- `header`: The text displayed in the column header.
-- `accessor`: The key used to access the data from each row object.
+- `label`: The text displayed in the column header.
+- `key`: The key used to access the corresponding field in each row object.
+- `sortable` *(optional)*: Whether the column is sortable by clicking the header.
 
 ## Example with Types
 
@@ -78,9 +80,9 @@ type Employee = {
 <CustomTable<Employee>
   data={employeeList}
   columns={[
-    { header: 'First Name', accessor: 'firstName' },
-    { header: 'Last Name', accessor: 'lastName' },
-    { header: 'Department', accessor: 'department' },
+    { label: 'First Name', key: 'firstName', sortable: true },
+    { label: 'Last Name', key: 'lastName' },
+    { label: 'Department', key: 'department', sortable: true },
   ]}
 />
 ```
