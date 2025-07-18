@@ -1,0 +1,21 @@
+{
+  "semi": true,
+  "printWidth": 140,
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "useTabs": false,
+  "arrowParens": "avoid",
+  "jsxSingleQuote": true,
+  "trailingComma": "all",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "overrides": [
+    {
+      "files": ["**/**.yml", "**/**.yaml"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
