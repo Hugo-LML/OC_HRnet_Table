@@ -27,18 +27,24 @@ yarn add @hugo-lml/hr-net-table
 import { CustomTable } from '@hugo-lml/hr-net-table';
 import '@hugo-lml/hr-net-table/dist/index.css';
 
-const data = [
+type Employee = {
+  firstName: string;
+  lastName: string;
+  department: string;
+};
+
+const data: Employee[] = [
   { firstName: 'Alice', lastName: 'Smith', department: 'HR' },
   { firstName: 'Bob', lastName: 'Johnson', department: 'Engineering' },
 ];
 
 const columns = [
-  { header: 'First Name', accessor: 'firstName' },
-  { header: 'Last Name', accessor: 'lastName' },
-  { header: 'Department', accessor: 'department' },
+  { label: 'First Name', key: 'firstName', sortable: true },
+  { label: 'Last Name', key: 'lastName' },
+  { label: 'Department', key: 'department', sortable: true },
 ];
 
-<CustomTable data={data} columns={columns} />
+<CustomTable<Employee> data={data} columns={columns} />;
 ```
 
 ## API

@@ -1,6 +1,6 @@
 {
   "name": "@hugo-lml/hr-net-table",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Custom Table from HRnet OC project",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
