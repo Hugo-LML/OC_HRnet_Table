@@ -76,7 +76,7 @@ const CustomTable = <T extends Record<string, unknown>>({
   }, [sortedData, currentPage, rowsPerPage]);
 
   // Calculate total number of pages
-  const totalPages = Math.ceil(data.length / rowsPerPage);
+  const totalPages = Math.ceil(filteredData.length / rowsPerPage);
 
   // Handle sorting when a column header is clicked
   const handleSort = (key: keyof T) => {
@@ -191,8 +191,8 @@ const CustomTable = <T extends Record<string, unknown>>({
       <div className="custom-table-pagination">
         <span>
           Showing {(currentPage - 1) * rowsPerPage + 1} to{" "}
-          {Math.min(currentPage * rowsPerPage, data.length)} of {data.length}{" "}
-          entries
+          {Math.min(currentPage * rowsPerPage, filteredData.length)} of{" "}
+          {filteredData.length} entries
         </span>
         <div>
           Page {currentPage} of {totalPages}
