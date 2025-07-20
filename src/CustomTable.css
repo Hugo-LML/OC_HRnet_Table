@@ -43,6 +43,12 @@
   cursor: pointer;
 }
 
+.custom-table th div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .custom-table tr:hover {
   background-color: #f9f9f9;
 }

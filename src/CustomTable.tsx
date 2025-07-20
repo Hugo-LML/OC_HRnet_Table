@@ -106,7 +106,7 @@ const CustomTable = <T extends Record<string, unknown>>({
     setCurrentPage(1);
   };
 
-  // No data display
+  // No data to show
   if (data.length === 0) return <p>No data to show</p>
 
   return (
@@ -149,13 +149,7 @@ const CustomTable = <T extends Record<string, unknown>>({
                 key={String(column.key)}
                 onClick={() => column.sortable && handleSort(column.key)}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
+                <div>
                   {column.label}
                   {/* Sort icon */}
                   {column.sortable && (
