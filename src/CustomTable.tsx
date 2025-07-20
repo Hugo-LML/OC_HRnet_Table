@@ -106,6 +106,9 @@ const CustomTable = <T extends Record<string, unknown>>({
     setCurrentPage(1);
   };
 
+  // No data display
+  if (data.length === 0) return <p>No data to show</p>
+
   return (
     <div className="custom-table-wrapper">
       {/* Filter and search controls */}
